@@ -15,7 +15,7 @@ BARK_ESPLORA="${BARK_ESPLORA:-esplora.signet.2nd.dev}"
 mkdir -p "${BARKD_DATADIR}"
 
 # Initialize wallet if it doesn't exist
-if [ ! -d "${BARKD_DATADIR}/.bark" ]; then
+if [ ! -d "${BARKD_DATADIR}" ]; then
   echo "Initializing bark wallet"
   echo "  network: ${BARK_NETWORK}"
   echo "  ark: ${BARK_ARK}"
