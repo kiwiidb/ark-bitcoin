@@ -22,9 +22,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
-      - name: Build barkd binary
+      - name: Build bark and barkd binaries
         run: |
-          cargo build --release --bin barkd
+          cargo build --release --bin bark --bin barkd
+          cp target/release/bark ./bark-linux-x86_64
           cp target/release/barkd ./barkd-linux-x86_64
       - name: Docker build and push
         if: github.actor != 'dependabot[bot]'

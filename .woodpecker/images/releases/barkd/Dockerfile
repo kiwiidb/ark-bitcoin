@@ -10,9 +10,11 @@ RUN apt-get update && \
 
 RUN mkdir -p /root/barkd/
 COPY ./barkd-linux-x86_64                          /usr/local/bin/barkd
+COPY ./bark-linux-x86_64                           /usr/local/bin/bark
 COPY ./.woodpecker/images/releases/barkd/start.sh  /root/barkd/start.sh
 
 RUN chmod a+x /usr/local/bin/barkd && \
+    chmod a+x /usr/local/bin/bark && \
     chmod a+x /root/barkd/start.sh && \
     dos2unix /root/barkd/start.sh
 
